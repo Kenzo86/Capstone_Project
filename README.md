@@ -302,7 +302,7 @@ requirements for Pangu Compiler that we have done so far.
 
 
 #### 5.1.1 Software Interface
-![](images)
+![](images/Software_Interface.png)
 Figure 1.1 : Software Interface
 The above figure 1.1 shows a set of interface specifications for each entity required in
 the program and how the cooperating entities will interact with each other. The three
@@ -314,7 +314,7 @@ semantic checking. More details will be discussed in the structure and interacti
 viewpoint section.
 
 #### 5.1.2 Command Line Interface (CLI)
-![](images)
+![](images/Com_Line_Intf.png)
 Figure 1.2 : command line interface
 The above figure 1.2 shows how to run the program. Open terminal and go to the
 directory which contains all the program source code. Then run ​ _panguyacc.py_ ​ with
@@ -323,17 +323,20 @@ directory which contains all the program source code. Then run ​ _panguyacc.py
 the command line argument ​ _test1.asc_ ​ which is the name of the pangu source file. The
 content of the output will be different based on the flag which can be modified in the
 panguyacc.py. For example,
-![](images)
-![](images)
-​ Figure 1.3 : Pangu Source Code ​ ​Figure 1.4 : Source Code deparsed from AST
+![](images/Pangu_SC.png)
+​Figure 1.3 : Pangu Source Code
+![](images/AST_SC.png)
+​Figure 1.4 : Source Code deparsed from AST
 The origin source code (figure 1.2) and deparsed code (figure 1.3) from the AST could be displayed for checking the parsing step if ​ **_y_deparse_ptree_** ​ flag is set to True.
-![](images)
-​Figure 1.5 : Symbol Table Figure 1.
+![](images/Symbol_Table.png)
+​Figure 1.5 : Symbol Table
+![](images/result.png)
+Figure 1.6
 The above figure shows part of the symbol table (figure 1.4) , where the variable is defined in the pangu program and what type the variable is for checking the semantic module (figure 1.5) since ​ **_y_show_symbol_table_** ​ flag is set to True. Also, the AST can be displayed if the variable ​ **y_show_ptree** ​ flag in panguyacc.py is set to True.
 
 
 ### 5.2 Structure Viewpoint
-![](images)
+![](images/structure_update.jpg)
 #### Figure 2: Structure Viewpoint
 
 Internally, a Pangu compiler includes the syntax and semantic check, intermediate code(IC) generator, target code generator and optimization. Our project currently covers the syntax and semantic check part of the Pangu compiler, which is shown in the frame of the above figure. The semantic check module still needs further implementation.
@@ -348,7 +351,7 @@ The function of each module is described as follow:
 - Symbol Table: Symbol Table is used to record the variables information of Pangu code. Each variable will have its id, scope, kind, type, signature and position information recorded.
 - Semantic Check: Semantic check is used to analyze the semantic aspect of the source code. Including checking and determining scopes of names , binding of names, types of expressions, call signatures, flow-of-control, etc.
 ### 5.3 Interaction Viewpoint
-![](images)
+![](images/interaction_view.png)
 **Figure 3:** Interaction Viewpoint
 **# 1**
 _Figure 3 shows the interactions among different components of the program. Scanner takes a Pangu program as input and generates tokens for Parser and Parser can call Scanner to get the next token. While parsing, Parser constructs an Abstract Syntax Tree (AST), which can be used to generate a Symbol Table. The Symbol Table is used for type checking by the Parser._
@@ -434,19 +437,19 @@ The following are the softwares, tools or packages needed to be downloaded or/an
 
 1. Open the CLI on your computer
 
-![](RackMultipart20210114-4-hljs22_html_49060f297983470f.png)
+![](images/cli.png)
 
 Figure 4.1 : CLI
 
 1. Go to the directory which contains all the source code of the program
 
-![](RackMultipart20210114-4-hljs22_html_d9d8519557f4866f.png)
+![](images/targeted_dirct.png)
 
 Figure 4.2 : Targeted Directory
 
 1. Enter the command line as the following:
 
-![](RackMultipart20210114-4-hljs22_html_a68553e22b468f4a.png)
+![](images/command.png)
 
 Figure 4.3 : Command
 
@@ -460,30 +463,28 @@ where pangu\_s\_c is the name of the pangu source code file
 
 Several testing flags are available, they can be switching on in panguyacc.py
 
-![](RackMultipart20210114-4-hljs22_html_b66a5bbfbad39ace.png)
+![](images/flags.png)
 
 1. Show\_tokens: lexical token in the pangu source code will be printed.
 
-![](RackMultipart20210114-4-hljs22_html_80d19d6e68fbc11e.png)
+![](images/tokens.png)
 
 1. Show\_comments: comments will not be hidden in the depares code.
 
-![](RackMultipart20210114-4-hljs22_html_654bdfb090fa0340.png)
+![](images/comments.png)
 
 1. Show\_productions: grammar production will be printed.
 
-![](RackMultipart20210114-4-hljs22_html_73e38ff97387039b.png)
+![](images/productions.png)
 
 1. Show\_ptree: AST structure will be printed.
 
-![](RackMultipart20210114-4-hljs22_html_aff4a3f96c2d6a83.png)
+![](images/AST_struct.png)
 
 1. Show\_deparse\_tree: code built from deparsing AST will be printed.
 
-![](RackMultipart20210114-4-hljs22_html_c8417915a39030d2.png)
+![](images/deparse_tree.png)
 
 1. Show\_symbol\_table: symbol table will be printed.
 
-![](RackMultipart20210114-4-hljs22_html_378ae29f7f1d8074.png)
-
-[1](#sdfootnote1anc) Partially from the unpublished book, _Designing and implementing a compiler,_ by Frantisek Franek and Michael Liut at McMaster University.
+![](images/show_symbol_table.png)
